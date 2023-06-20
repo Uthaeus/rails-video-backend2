@@ -8,5 +8,7 @@ class User < ApplicationRecord
 
   validates_presence_of :email, :username
 
+  mount_uploader :avatar, AvatarUploader
+
   has_many :posts, dependent: :destroy
 end
