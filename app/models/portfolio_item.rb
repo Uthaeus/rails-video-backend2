@@ -3,4 +3,6 @@ class PortfolioItem < ApplicationRecord
 
     mount_uploader :main_image, PortfolioUploader
     mount_uploader :thumb_image, PortfolioUploader
+
+    has_many :technologies
 end

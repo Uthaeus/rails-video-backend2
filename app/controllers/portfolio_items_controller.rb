@@ -12,7 +12,7 @@ class PortfolioItemsController < ApplicationController
 
   # GET /portfolio_items/1
   def show
-    render json: @portfolio_item
+    render json: @portfolio_item, include: [:technologies]
   end
 
   # POST /portfolio_items
