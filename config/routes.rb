@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :technologies
   resources :portfolio_items
   resources :blogs
   get 'home', to: 'pages#home'

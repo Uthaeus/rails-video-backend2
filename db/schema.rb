@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_21_035333) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_22_003132) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_21_035333) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "technologies", force: :cascade do |t|
+    t.string "name"
+    t.bigint "portfolio_item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_item_id"], name: "index_technologies_on_portfolio_item_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -60,4 +68,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_21_035333) do
   end
 
   add_foreign_key "posts", "users"
+  add_foreign_key "technologies", "portfolio_items"
 end
