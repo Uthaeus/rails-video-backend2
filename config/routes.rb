@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :portfolio_comments
   resources :technologies
   resources :portfolio_items
   resources :blogs
