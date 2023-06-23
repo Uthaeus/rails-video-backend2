@@ -47,6 +47,6 @@ class PortfolioCommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def portfolio_comment_params
-      params.require(:portfolio_comment).permit(:content, :portfolio_item_id)
+      params.require(:portfolio_comment).permit(:content, :portfolio_item_id, :user_id, :author)
     end
 end

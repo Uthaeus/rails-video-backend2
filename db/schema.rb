@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_22_174640) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_23_040930) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_174640) do
     t.bigint "portfolio_item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "author"
     t.index ["portfolio_item_id"], name: "index_portfolio_comments_on_portfolio_item_id"
   end
 
