@@ -5,4 +5,5 @@ class PortfolioItem < ApplicationRecord
     mount_uploader :thumb_image, PortfolioUploader
 
     has_many :technologies
+    has_many :portfolio_comments
 end

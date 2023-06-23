@@ -1,5 +1,6 @@
 class PortfolioCommentsController < ApplicationController
   before_action :set_portfolio_comment, only: %i[ show update destroy ]
+  respond_to :json
 
   # GET /portfolio_comments
   def index

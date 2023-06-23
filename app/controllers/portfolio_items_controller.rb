@@ -12,7 +12,7 @@ class PortfolioItemsController < ApplicationController
 
   # GET /portfolio_items/1
   def show
-    render json: @portfolio_item, include: [:technologies]
+    render json: @portfolio_item, include: [:technologies, :portfolio_comments]
   end
 
   # POST /portfolio_items
@@ -48,6 +48,6 @@ class PortfolioItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def portfolio_item_params
-      params.require(:portfolio_item).permit(:title, :description, :main_image, :thumb_image)
+      params.require(:portfolio_item).permit(:title, :description, :main_image, :thumb_image, :portfolio_comments)
     end
 end
