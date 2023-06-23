@@ -47,6 +47,6 @@ class BlogCommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_comment_params
-      params.require(:blog_comment).permit(:content, :author, :blog_id)
+      params.require(:blog_comment).permit(:content, :author, :blog_id, :user_id)
     end
 end
