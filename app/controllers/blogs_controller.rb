@@ -7,12 +7,12 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
 
-    render json: @blogs
+    render json: @blogs, include: :category 
   end
 
   # GET /blogs/1
   def show
-    render json: @blog, include: [:blog_comments]
+    render json: @blog, include: [:blog_comments, :category]
   end
 
   # POST /blogs
@@ -48,6 +48,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :body, :image)
+      params.require(:blog).permit(:title, :body, :image, :category_id)
     end
 end
